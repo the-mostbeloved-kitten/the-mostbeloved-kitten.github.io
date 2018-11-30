@@ -1,19 +1,12 @@
-// Variables
-$baseMenuBackground: #111;          // Base color theme
-$secondaryMenuBackground: #0186ba;  // Secondary color (highlights, triangles...)
-$gutter: 10px;                      // Base gutter
+$baseMenuBackground: #111;         
+$secondaryMenuBackground: #0186ba;  triangles...)
+$gutter: 10px;                    
 
-// Latest CSS box model 
+
 *, *:after, *:before {
   box-sizing: border-box; 
 }
 
-// The classic hamburger icon
-// <button class="animenu__toggle">
-//   <span class="animenu__toggle__bar"></span>
-//   <span class="animenu__toggle__bar"></span>
-//   <span class="animenu__toggle__bar"></span>
-// </button>
 .animenu__toggle {
   display: none;
   cursor: pointer;
@@ -58,7 +51,7 @@ $gutter: 10px;                      // Base gutter
   }
 }
 
-// Clear some defaults
+
 .animenu {
   display: block;
   ul {
@@ -83,12 +76,7 @@ $gutter: 10px;                      // Base gutter
   }
 }
 
-// First level -> main menu items
-// <nav class="animenu">
-//    <ul class="animenu__nav">
-//    ...
-//    </ul>
-//  </nav>
+
 .animenu__nav {
   background-color: $baseMenuBackground;        
 
@@ -113,8 +101,7 @@ $gutter: 10px;                      // Base gutter
       }
     }
 
-    // Duplicate stuff due to 
-    // https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/16651302/
+
     &:focus-within {
       > ul {
         opacity: 1;
@@ -140,14 +127,7 @@ $gutter: 10px;                      // Base gutter
   }   
 }
 
-// Second level
-// <nav class="animenu">
-//    <ul class="animenu__nav">
-//      <li>
-//        <ul class="animenu__nav__dropdown"></ul>
-//      </li>
-//    </ul>
-//  </nav>
+
 .animenu__nav__dropdown {
   min-width: 100%;
   position: absolute;
@@ -190,8 +170,7 @@ $gutter: 10px;                      // Base gutter
       color: #fff;
     }
 
-    // Duplicate stuff due to 
-    // https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/16651302/    
+  
     &:focus-within {
       background-color: $secondaryMenuBackground;
       border-color: $secondaryMenuBackground;
@@ -200,8 +179,7 @@ $gutter: 10px;                      // Base gutter
   }
 }
 
-// The main breakpoint is 767px
-// Adjust the first and second levels display
+
 @media screen and (max-width: 767px) {
   .animenu__toggle {
     display: inline-block;
@@ -212,12 +190,7 @@ $gutter: 10px;                      // Base gutter
     display: none;
   }
 
-  // First level -> main menu items
-  // <nav class="animenu">
-  //    <ul class="animenu__nav">
-  //    ...
-  //    </ul>
-  //  </nav>    
+
   .animenu__nav {
     margin: $gutter 0;
 
@@ -256,14 +229,7 @@ $gutter: 10px;                      // Base gutter
     }
   }
 
-  // Second level
-  // <nav class="animenu">
-  //    <ul class="animenu__nav">
-  //      <li>
-  //        <ul class="animenu__nav__dropdown"></ul>
-  //      </li>
-  //    </ul>
-  //  </nav>              
+            
   .animenu__nav__dropdown {
     position: static;
     background-color: lighten($baseMenuBackground, 15%);
@@ -283,14 +249,7 @@ $gutter: 10px;                      // Base gutter
   }
 }
 
-// Expanding the animenu
-// <nav class="animenu">
-//    <ul class="animenu__nav animenu__nav--open">
-//      <li>
-//        <ul class="animenu__nav__dropdown"></ul>
-//      </li>
-//    </ul>
-//  </nav>
+
 .animenu__nav--open {
   display: block !important;
 
