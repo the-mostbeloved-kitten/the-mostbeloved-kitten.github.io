@@ -1,259 +1,71 @@
-$baseMenuBackground: #111;         
-$secondaryMenuBackground: #0186ba;  triangles...)
-$gutter: 10px;                    
+@import url(https://fonts.googleapis.com/css?family=Lato);
 
-
-*, *:after, *:before {
-  box-sizing: border-box; 
+*, *:before, *:after{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
 }
 
-.animenu__toggle {
-  display: none;
-  cursor: pointer;
-  background-color: $baseMenuBackground;
-  border: 0; 
-  padding: 10px;
-  height: 40px;
-  width: 40px;
+/*| Navigation |*/
 
-  &:hover {
-    background-color: $secondaryMenuBackground;
-  }
+nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 3px 10px -2px rgba(0,0,0,.1);
+  border: 1px solid rgba(0,0,0,.1);
 }
-
-.animenu__toggle__bar {
-  display: block;
-  width: 20px; height: 2px;
-  background-color: #fff;    
-  transition: .15s cubic-bezier(0.75, -0.55, 0.25, 1.55);
-
-  &+.animenu__toggle__bar {
-    margin-top: 4px;
-  }  
-}
-
-.animenu__toggle--active {
-  .animenu__toggle__bar {
-    margin: 0;
-    position: absolute;
-
-    &:nth-child(1) {
-      transform: rotate(45deg);
-    }
-
-    &:nth-child(2) {
-      opacity: 0;
-    }
-
-    &:nth-child(3) {
-      transform: rotate(-45deg);
-    }        
-  }
-}
-
-
-.animenu {
-  display: block;
-  ul {
-    padding: 0;
-    list-style: none;    
-    font: 0 -apple-system,
-            BlinkMacSystemFont,   
-            "Segoe UI",          
-            "Roboto",
-            "Helvetica Neue", Arial, sans-serif,
-            "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";    
-  }
-
-  li, a {
-    display: inline-block;
-    font-size: 15px;
-  }
-
-  a {
-    color: lighten($baseMenuBackground, 60%);
-    text-decoration: none;
-  }
-}
-
-
-.animenu__nav {
-  background-color: $baseMenuBackground;        
-
-  > li {
+  nav ul{
+    list-style: none;
     position: relative;
-    border-right: 1px solid lighten($baseMenuBackground, 20%);
-
-    > a {
-      padding: $gutter 3 * $gutter;
-      text-transform: uppercase; 
-    }    
-
-    &:hover {
-      > ul {
-        opacity: 1;
-        visibility: visible;
-        margin: 0;        
-      }
-
-      > a {
-        color: #fff;
-      }
+    float: right;
+    margin-right: 100px;
+    display: inline-table;
+  }
+    nav ul li{
+      float: left;
+      -webkit-transition: all .2s ease-in-out;
+      -moz-transition: all .2s ease-in-out;
+      transition: all .2s ease-in-out;
     }
 
-
-    &:focus-within {
-      > ul {
-        opacity: 1;
-        visibility: visible;
-        margin: 0;        
+    nav ul li:hover{background: rgba(0,0,0,.15);}
+    nav ul li:hover > ul{display: block;}
+    nav ul li{
+      float: left;
+      -webkit-transition: all .2s ease-in-out;
+      -moz-transition: all .2s ease-in-out;
+      transition: all .2s ease-in-out;
+    }
+      nav ul li a{
+        display: block; 
+        padding: 30px 20px;
+        color: #222; 
+        font-size: .9em;
+        letter-spacing: 1px;
+        text-decoration: none;
+        text-transform: uppercase;
       }
-      
-      > a {
-        color: #fff;
+      nav ul ul{
+        display: none;
+        background: #fff;
+        position: absolute; 
+        top: 100%;
+        box-shadow: -3px 3px 10px -2px rgba(0,0,0,.1);
+        border: 1px solid rgba(0,0,0,.1);
       }
-    }    
-  }
-
-  &__hasDropdown:before { 
-    content:""; 
-    position: absolute;
-    border: 4px solid transparent;
-    border-bottom: 0; 
-    border-top-color: currentColor;
-    top: 50%;
-    margin-top: -2px;
-    right: 10px;  
-  }   
-}
-
-
-.animenu__nav__dropdown {
-  min-width: 100%;
-  position: absolute;
-  top: 100%; left: 0;
-  z-index: 1;   
-  opacity: 0;
-  visibility: hidden;
-  margin: 2 * $gutter 0 0 0;
-  background-color: lighten($baseMenuBackground, 15%);    
-  transition: margin .15s, opacity .15s;
-
-  > li {
-    width: 100%;
-    border-bottom: 1px solid lighten($baseMenuBackground, 25%);
-
-    &:first-child > a:after {
-      content: '';
-      position: absolute;
-      height: 0; width: 0;
-      left: 1em;
-      top: -6px;
-      border: 6px solid transparent;
-      border-top: 0;
-      border-bottom-color: inherit;
-    }
-
-    &:last-child {
-      border: 0;
-    }
-  }
-
-  a {
-    padding: $gutter;
-    width: 100%;
-    border-color: lighten($baseMenuBackground, 15%);
-
-    &:hover {
-      background-color: $secondaryMenuBackground;
-      border-color: $secondaryMenuBackground;
-      color: #fff;
-    }
-
-  
-    &:focus-within {
-      background-color: $secondaryMenuBackground;
-      border-color: $secondaryMenuBackground;
-      color: #fff;
-    }    
-  }
-}
-
-
-@media screen and (max-width: 767px) {
-  .animenu__toggle {
-    display: inline-block;
-  }
-
-  .animenu__nav,
-  .animenu__nav__dropdown {
-    display: none;
-  }
-
-
-  .animenu__nav {
-    margin: $gutter 0;
-
-    > li {
-      width: 100%;
-      border-right: 0;
-      border-bottom: 1px solid lighten($baseMenuBackground, 25%);
-
-      &:last-child {
-        border: 0; 
-      }
-
-      &:first-child > a:after {
-        content: '';
-        position: absolute;
-        height: 0; width: 0;
-        left: 1em;
-        top: -6px;
-        border: 6px solid transparent;
-        border-top: 0;
-        border-bottom-color: inherit;
-      }
-
-      > a {
-        width: 100%;
-        padding: $gutter;
-        border-color: $baseMenuBackground;
-        position: relative; //dropdown caret
-      }
-    }
-
-    a:hover {
-      background-color: $secondaryMenuBackground;
-      border-color: $secondaryMenuBackground;
-      color: #fff;      
-    }
-  }
-
-            
-  .animenu__nav__dropdown {
-    position: static;
-    background-color: lighten($baseMenuBackground, 15%);
-    margin: 0;
-    transition: none;
-    visibility: visible;
-    opacity: 1;     
-
-    > li:first-child > a:after {
-      content: none;
-    }
-
-    a {
-      padding-left: 2 * $gutter;
-      width: 100%;
-    }           
-  }
-}
-
-
-.animenu__nav--open {
-  display: block !important;
-
-  & .animenu__nav__dropdown {
-    display: block;
-  }
-}
+        nav ul ul li{float: none; position: relative;}
+          nav ul ul li a {
+            padding: 15px 30px; 
+            border-bottom: 1px solid rgba(0,0,0,.05);
+          }
+          nav ul ul ul {
+            position: absolute; 
+            left: 100%; 
+            top:0;
+          }	
