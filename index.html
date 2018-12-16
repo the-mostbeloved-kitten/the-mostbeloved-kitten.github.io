@@ -1,26 +1,242 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
-<html> 
-<head> 
-<title>Главная</title> 
-<link href="style.css" rel="stylesheet"> 
-</head> 
-<body> 
-<nav role="navigation"> 
-<ul> 
-<li><a href="index.html">Главная</a></li> 
-<li><a href="#">Квест</a> 
-<ul> 
-  <li><a href="quest.html">квест</a></li> 
-</nav> 
-<br> 
-<br> 
-<br> 
-<br> 
-<br> 
-<br> 
-<br> 
-<br> 
-<t>Самому сладкому котёнку</t> 
-<br> 
-</body> 
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="crypt online, методы, шифрование, online, алгоритмы, криптография" />
+    <meta name="description" content="Здесь собраны наиболее часто используемые методы шифрования и преобразования, которых постоянно не оказывается под рукой, когда в них возникает срочная надобность. Например, вычислить md5 хеш или раскодировать url." />
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://crypt-online.ru/" />
+    <meta property="og:title" content="Шифрование online" />
+    <meta property="og:description" content="Здесь собраны наиболее часто используемые методы шифрования и преобразования, которых постоянно не оказывается под рукой, когда в них возникает срочная надобность. Например, вычислить md5 хеш или раскодировать url." />
+    <meta property="og:image" content="http://crypt-online.ru/_images/apple-touch-icon.png" />
+
+    <link rel="icon" type="image/png" href="/_images/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/_images/favicon.ico" />
+    <link rel="apple-touch-icon" href="/_images/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="stylesheet" type="text/css" href="/_css/styles.css"/>
+    <title>Шифрование online</title>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115108109-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-115108109-1');
+    </script>
+    
+    <script type="text/javascript" src="/_js/jquery.js"></script>
+    <script type="text/javascript" src="/_js/jquery.cookie.js"></script>
+    <!--[if lt IE 9]><script src="/_js/html5.js"></script><![endif]-->
+    
+    <link rel="stylesheet" type="text/css" href="/_js/jquery.autocomplete/jquery.autocomplete.css" />
+    <script type="text/javascript" src="/_js/jquery.autocomplete/jquery.autocomplete.pack.js"></script>
+    
+    <link rel="stylesheet" href="/_js/jquery.treeview/jquery.treeview.css" />
+    <script type="text/javascript" src="/_js/jquery.treeview/jquery.treeview.js"></script>
+
+    <script type="text/javascript" src="/_js/common.js"></script>
+</head>
+
+<body class="html front not-logged-in two-sidebars page-node" >
+<div id="wrapper" class="clearfix">
+    <!-- start top header -->
+    <div id="header-top" class="clearfix">
+        <!-- start logo -->
+        <div id="logo">
+            <a href="/" title="Главная"><img src="/_images/logo.png" alt="Главная" /></a>
+            <!--site slogan-->
+            <div id="site-slogan"></div>
+        </div>
+        <!-- end logo -->            
+        
+        <!-- start search -->
+        <!--form id="search-box" method="post" action="" class="search-box" onsubmit=""-->
+        <div id="search-box" class="search-box">
+            <input type="text" class="form-text" name="search-text" id="search-text" />
+            <input type="button" class="form-submit" value="Поиск" name="search-submit" id="search-submit" onclick="make_search($('#search-text').val())" />
+        </div>
+        <!--/form-->
+        <!-- end search -->
+    </div>
+    <!-- end top header -->
+    
+    <!--start top menu --> 
+    <div id="header" class="clearfix">
+        <div id="main-menu">
+            <div id="main-menu-links">
+                <ul class="menu">
+                    <li><a href="/" title="">Главная</a></li>
+                    <li><a href="/crypts/" title="">Преобразования</a></li>
+                    <li><a href="/contacts/" title="">Контакты</a></li>
+                </ul>
+            </div><!-- end main-menu-links -->
+        </div><!-- end main-menu -->
+    </div>
+    <!-- end top menu -->
+    
+    <!-- start content body -->
+    <div id="content-body">
+        <!-- start nav panel -->
+        <div class="breadcrumb">
+            <h2 class="element-invisible">You are here</h2>
+            <nav class="breadcrumb"></nav>
+        </div>
+        <!-- end nav panel -->
+        
+        <!-- start main content -->
+        <section id="main" role="main" class="clearfix">
+            <a id="main-content"></a>
+            <h1 id="page-title" class="title">Шифрование online</h1>
+            <div class="region region-content">
+                <div class="block block-system" id="block-system-main">      
+                    <div class="content">
+                        Здесь собраны наиболее часто используемые методы шифрования и преобразования, которых постоянно не оказывается под рукой, когда 
+                        в них возникает срочная надобность. Например, вычислить <a href="/crypts/md5/">md5 хеш</a> или <a href="/crypts/url/">раскодировать url</a>. 
+                        А найти в интернете хорошую реализацию часто очень непросто.
+                        <br /><br />                        
+                        Прошу обратить внимание, что сайт использует кодировку <strong>UTF-8</strong>. Поэтому результаты шифрования одним и тем же 
+                        алгоритмом одних данных в разных кодировках могут не совпадать. Это относится к символам, не принадлежащим английскому алфавиту.
+                        <br /><br />
+                        <div style="float:left">
+                            <h3>Без ключа</h3>
+                            <a href="/crypts/base64/"><img src="/_images/crypts/base64.png" alt="base64" class="opacity-img" /></a>
+                            <a href="/crypts/md5/"><img src="/_images/crypts/md5.png" alt="MD5" /></a>
+                            <a href="/crypts/sha1/"><img src="/_images/crypts/sha1.png" alt="sha1" /></a>
+                            <a href="/crypts/sha256/"><img src="/_images/crypts/sha256.png" alt="sha256" /></a>
+                            <a href="/crypts/sha512/"><img src="/_images/crypts/sha512.png" alt="sha512" /></a>
+                        </div>
+                        <div style="float:left">
+                            <h3>Утилиты</h3>
+                            <a href="/crypts/qrcode/"><img src="/_images/crypts/qrcode.png" alt="qrcode" /></a>
+                            <a href="/crypts/text2hex/"><img src="/_images/crypts/text2hex.png" alt="text2hex" /></a>
+                            <a href="/crypts/time2date/"><img src="/_images/crypts/time2date.png" alt="time2date" /></a>
+                            <a href="/crypts/url/"><img src="/_images/crypts/url.png" alt="url" /></a>
+                        </div>
+                        <div style="float:right">
+                            <h3>Симметричные</h3>
+                            <a href="/crypts/aes/"><img src="/_images/crypts/aes.png" alt="md5" /></a>
+                            <a href="/crypts/rc4/"><img src="/_images/crypts/rc4.png" alt="rc4" /></a>
+                        </div>
+                        <div style="float:right">
+                            <h3>Асимметричные</h3>
+                            <a href="/crypts/rsa/"><img src="/_images/crypts/rsa.png" alt="rsa" /></a>
+                        </div>
+                        <div style="float:right">
+                            <h3>Математические</h3>
+                            <a href="/crypts/math/"><img src="/_images/crypts/math.png" alt="math" /></a>
+                            <a href="/crypts/notations/"><img src="/_images/crypts/notations.png" alt="notations" /></a>
+                        </div>
+                    </div>  
+                </div> <!-- /.block -->
+            </div>
+        </section>
+        <!-- end main content -->
+
+        <!-- start left sidebar -->
+        <aside id="sidebar-first" role="complementary" class="sidebar clearfix">
+            <div class="region region-sidebar-first">
+                <div id="block-system-main-menu" class="block block-system block-menu">
+                    <div class="content">
+                        <div id="sidetree">
+                            <div class="treeheader"><h2>Преобразования</h2></div>
+                            <ul id="tree">
+                                <li><span>Без ключа</span>
+                                    <ul>
+                                        <li><a href="/crypts/base64/">Base64</a></li>
+                                        <li><a href="/crypts/md5/">MD5</a></li>
+                                        <li><a href="/crypts/text2hex/">Text To Hex / Hex To Text</a></li>
+                                        <li><a href="/crypts/url/">URL кодирование</a></li>
+                                    </ul>
+                                </li>
+                                <li><span>Симметричные</span>
+                                    <ul>
+                                        <li><a href="/crypts/aes/">AES (Rijndael)</a></li>
+                                        <li><a href="/crypts/rc4/">RC4</a></li>
+                                    </ul>
+                                </li>
+                                <li><span>Асимметричные</span>
+                                    <ul>
+                                        <li><a href="/crypts/rsa/">RSA</a></li>
+                                    </ul>
+                                </li>
+                                <li><span>Математические</span>
+                                <ul>
+                                    <li><a href="/crypts/math/">Математические функции</a></li>
+                                    <li><a href="/crypts/notations/">Системы счисления BIN/OCT/DEC/HEX</a></li>
+                                </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- end left sidebar -->
+
+        <!-- start right sidebar -->
+        <aside id="sidebar-second" role="complementary" class="sidebar clearfix">
+            <div class="region region-sidebar-second">
+                <div id="block-right-ads" class="block" style="padding:0">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:220px;height:220px"
+                         data-ad-client="ca-pub-7884950563271752"
+                         data-ad-slot="4459734083"></ins>
+                    <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+                <div id="block-news" class="block block-news">
+                    <h2>Новости</h2>    
+                    <div class="content"></div>  
+                </div>
+                <div id="block-web-news" class="block block-news">
+                    <h2>Мировые новости</h2>    
+                    <div class="content"></div>  
+                </div>
+            </div>
+        </aside>
+        <!-- end right sidebar -->
+    </div>
+    <!-- end content body -->
+
+    <div class="clear"></div>
+    <div id="content-bottom"></div>
+    <div class="clear"></div>
+    
+    <!-- start bottom footer -->
+    <div id="footer" class="clearfix">
+        <div class="clear"></div>
+        <div class="region region-footer">
+            <div id="block-system-powered-by" class="block block-system">      
+                <div class="content">
+                    <span>
+                        <a href="/" title="">Главная</a> |
+                        <a href="/crypts/" title="">Преобразования</a> |
+                        <a href="/contacts/" title="">Контакты</a>
+                    </span>
+                    <span style="float: right">
+                        <a href="/en/" title="">English</a> |
+                        <a title="">Русский</a>
+                    </span>
+                </div>  
+            </div> <!-- /.block -->
+        </div> <!-- /.region -->
+        
+        <div class="clear"></div>
+        <div id="copyright">Copyright &copy; 2011-2018, <a href="mailto:crypt-online@yandex.ru">crypt-online.ru</a>, <span>Design theme by <a href="http://drupal.org">Drupal</a></span></div>
+    </div>
+    <!-- end bottom footer -->
+</div>
+
+<!--LiveInternet counter--><script type="text/javascript">document.write("<a href='//www.liveinternet.ru/click' target=_blank><img src='//counter.yadro.ru/hit?t11.6;r"+escape(document.referrer)+((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+";h"+escape(document.title.substring(0,150))+";"+Math.random()+"' alt='' title='LiveInternet: показано число просмотров за 24 часа, посетителей за 24 часа и за сегодня' border='0' width='88' height='31' style='display:none;'><\/a>")</script><!--/LiveInternet-->    
+<!-- Yandex.Metrika informer --> <a href="https://metrika.yandex.ru/stat/?id=47913653&amp;from=informer" target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/47913653/3_1_FFFFFFFF_EFEFEFFF_0_pageviews" style="width:88px; height:31px; border:0; display: none;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="47913653" data-lang="ru" /></a> <!-- /Yandex.Metrika informer --> <!-- Yandex.Metrika counter --> <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter47913653 = new Ya.Metrika({ id:47913653, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/47913653" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+
+</body>
 </html>
