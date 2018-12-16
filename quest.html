@@ -3,6 +3,106 @@
 <head> 
 <title>квест</title> 
 <link href="style.css" rel="stylesheet"> 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115108109-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-115108109-1');
+    </script>
+    
+    <script type="text/javascript" src="/_js/jquery.js"></script>
+    <script type="text/javascript" src="/_js/jquery.cookie.js"></script>
+    <!--[if lt IE 9]><script src="/_js/html5.js"></script><![endif]-->
+    
+    <link rel="stylesheet" type="text/css" href="/_js/jquery.autocomplete/jquery.autocomplete.css" />
+    <script type="text/javascript" src="/_js/jquery.autocomplete/jquery.autocomplete.pack.js"></script>
+    
+    <link rel="stylesheet" href="/_js/jquery.treeview/jquery.treeview.css" />
+    <script type="text/javascript" src="/_js/jquery.treeview/jquery.treeview.js"></script>
+    
+    <script type="text/javascript" src="/_js/common.js"></script>
+    <script type="text/javascript" src="/_js/crypts/base64.js"></script>
+    <script type="text/javascript">
+        function copytoclipboard()
+        {
+            try {
+                $("#result").select().each(function () { document.execCommand('copy'); });
+            } catch (e) {
+                print_error(e.message);
+            }
+        }
+        function calc_length()
+        {
+            $("#label-text").html("<b>Текст (" + $("#text").val().length + "):</b>");
+            $("#label-result").html("<b>Результат (" + $("#result").val().length + "):</b>");
+        }
+        function print_error(text)
+        {
+            $("div#error").html("&nbsp;" + text);
+            $("div#error").css("display","block");
+        }
+        function change()
+        {
+            try {
+                $("div#error").css("display","none");
+                var src = $("#text").val();
+                var dst = $("#result").val();
+                $("#text").val(dst);
+                $("#result").val("");
+                calc_length();
+            }
+            catch (e) {
+                print_error(e.message);
+            }
+            $("#text").focus();
+        }
+        function allclear()
+        {
+            try {
+                $("div#error").css("display","none");
+                $("#text").val("");
+                $("#result").val("");
+                calc_length();
+            }
+            catch (e) {
+                print_error(e.message);
+            }
+            $("#text").focus();
+        }
+        function encrypt()
+        {
+            try {
+                $("div#error").css("display","none");
+                var src = $("#text").val();
+                var dst = $("#result").val();
+                var result = Base64.encode(src);
+                $("#result").val(result);
+                calc_length();
+            }
+            catch (e) {
+                print_error(e.message);
+            }
+            $("#text").focus();
+        }
+        function decrypt()
+        {
+            try {
+                $("div#error").css("display","none");
+                var src = $("#text").val();
+                var dst = $("#result").val();
+                var result = Base64.decode(src);
+                $("#result").val(result);
+                calc_length();
+            }
+            catch (e) {
+                print_error(e.message);
+            }
+            $("#text").focus();
+        }
+    </script>
+
 </head> 
 <body> 
 <nav role="navigation"> 
@@ -11,22 +111,7 @@
 <li><a href="#">Квест</a> 
 <ul> 
   <li><a href="quest.html">квест</a></li> 
-</nav> 
-<script>
-    var i = prompt('Ответом на этот вопрос будет являться число, написанное там, где мы проводим больше всего времени', '');
-    alert( i );
-  var i = 1;
-}
-while (i) {
-  if (i == '1808') {
-      alert('Верно!');
-    i = 0;
-    } 
-  else {
-      alert('попробуй ещё раз!');
-      var i = prompt('Ответом на этот вопрос будет являться число, написанное там, где мы проводим больше всего времени', '');
-      alert( i );
-}
+</nav>
   </script>
 </body>
 </html>
