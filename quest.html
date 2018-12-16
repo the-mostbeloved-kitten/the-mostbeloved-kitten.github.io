@@ -1,9 +1,27 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
-<html> 
-<head> 
-<title>квест</title> 
-<link href="style.css" rel="stylesheet"> 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115108109-1"></script>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="base64,online,шифрование,дешифрование,кодировать,декодировать" />
+    <meta name="description" content="Base64 online шифрование. Это группа аналогичных схем кодирования двоичного текста, которые представляют двоичные данные в формате строки ASCII путем перевода их в представление radix-64. Термин Base64 происходит от определенной кодировки передачи содержимого MIME." />
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://crypt-online.ru/crypts/base64/" />
+    <meta property="og:title" content="Base64 - шифрование online" />
+    <meta property="og:description" content="Base64 online шифрование. Это группа аналогичных схем кодирования двоичного текста, которые представляют двоичные данные в формате строки ASCII путем перевода их в представление radix-64. Термин Base64 происходит от определенной кодировки передачи содержимого MIME." />
+    <meta property="og:image" content="http://crypt-online.ru/_images/crypts/base64.png" />
+
+    <link rel="icon" type="image/png" href="/_images/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/_images/favicon.ico" />
+    <link rel="apple-touch-icon" href="/_images/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="stylesheet" type="text/css" href="/_css/styles.css"/>    
+    <title>Base64 - шифрование online</title>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115108109-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -102,18 +120,9 @@
             $("#text").focus();
         }
     </script>
+</head>
 
-</head> 
-<body> 
-<nav role="navigation"> 
-<ul> 
-<li><a href="index.html">Главная</a></li> 
-<li><a href="#">Квест</a> 
-<ul> 
-  <li><a href="quest.html">квест</a></li> 
-</nav>
-  </script>
-  <body class="html front not-logged-in two-sidebars page-node" >
+<body class="html front not-logged-in two-sidebars page-node" >
 <div id="wrapper" class="clearfix">
     <!-- start top header -->
     <div id="header-top" class="clearfix">
@@ -228,6 +237,23 @@
                              (adsbygoogle = window.adsbygoogle || []).push({});
                         </script>
                         <br />
+                        <strong>Описание:</strong>
+                        <div id="description">
+                            Base64 - это группа аналогичных схем кодирования двоичного текста, которые представляют двоичные данные в формате строки ASCII путем перевода их в представление radix-64.
+                            Термин Base64 происходит от определенной кодировки передачи содержимого MIME.
+                            <br /><br />
+                            Каждая цифра base64 представляет ровно 6 бит данных. Таким образом, три 8-битных байта (т. е. всего 24 бита) могут быть представлены четырьмя 6-битными цифрами base64.
+                            <br /><br />
+                            Определенный набор из 64 символов, выбранных для представления 64 мест-значений для базы, варьируется между реализациями. Общая стратегия состоит в том, чтобы выбрать
+                            64 символа, которые являются членами подмножества, общего для большинства кодировок, а также для печати. Эта комбинация оставляет данные, которые вряд ли будут изменены
+                            при передаче через информационные системы, такие как электронная почта, которые традиционно не были 8-битными чистыми. Например, реализация Base64 MIME использует A-Z, A-z и 0-9
+                            для первых 62 значений. Другие варианты разделяют это свойство, но отличаются символами, выбранными для последних двух значений; примером является UTF-7.
+                            <br /><br />
+                            Самые ранние экземпляры этого типа кодирования были созданы для коммутируемой связи между системами, работающими под управлением той же ОС — например, uuencode для UNIX,
+                            BinHex для TRS-80 (позже адаптированный для Macintosh) — и поэтому могли бы сделать больше предположений о том, какие символы были безопасны для использования.
+                            Например, uuencode использует прописные буквы, цифры и много знаков препинания, но не строчные.
+                        </div><br />                        
+                        <strong>Ресурсы:</strong>
                         <div id="content-resources">
                             <a href="http://ru.wikipedia.org/wiki/Base64"><img src="/_images/wikipedia.png"  title="Base64 Wikipedia" /></a>
                             <a href="http://tools.ietf.org/html/rfc1421"><img src="/_images/rfc.png" title="RFC 1421 (Privacy Enhancement for Electronic Internet Mail)" /></a>
