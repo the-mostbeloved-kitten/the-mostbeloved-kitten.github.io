@@ -5,21 +5,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="keywords" content="crypt online, методы, шифрование, online, алгоритмы, криптография" />
-    <meta name="description" content="Здесь собраны наиболее часто используемые методы шифрования и преобразования, которых постоянно не оказывается под рукой, когда в них возникает срочная надобность. Например, вычислить md5 хеш или раскодировать url." />
+    <meta name="keywords" content="base64,online,шифрование,дешифрование,кодировать,декодировать" />
+    <meta name="description" content="Base64 online шифрование. Это группа аналогичных схем кодирования двоичного текста, которые представляют двоичные данные в формате строки ASCII путем перевода их в представление radix-64. Термин Base64 происходит от определенной кодировки передачи содержимого MIME." />
     
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://crypt-online.ru/" />
-    <meta property="og:title" content="Шифрование online" />
-    <meta property="og:description" content="Здесь собраны наиболее часто используемые методы шифрования и преобразования, которых постоянно не оказывается под рукой, когда в них возникает срочная надобность. Например, вычислить md5 хеш или раскодировать url." />
-    <meta property="og:image" content="http://crypt-online.ru/_images/apple-touch-icon.png" />
+    <meta property="og:url" content="http://crypt-online.ru/crypts/base64/" />
+    <meta property="og:title" content="Base64 - шифрование online" />
+    <meta property="og:description" content="Base64 online шифрование. Это группа аналогичных схем кодирования двоичного текста, которые представляют двоичные данные в формате строки ASCII путем перевода их в представление radix-64. Термин Base64 происходит от определенной кодировки передачи содержимого MIME." />
+    <meta property="og:image" content="http://crypt-online.ru/_images/crypts/base64.png" />
 
     <link rel="icon" type="image/png" href="/_images/apple-touch-icon.png">
     <link rel="shortcut icon" type="image/x-icon" href="/_images/favicon.ico" />
     <link rel="apple-touch-icon" href="/_images/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
-    <link rel="stylesheet" type="text/css" href="/_css/styles.css"/>
-    <title>Шифрование online</title>
+    <link rel="stylesheet" type="text/css" href="/_css/styles.css"/>    
+    <title>Base64 - шифрование online</title>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115108109-1"></script>
     <script>
@@ -39,8 +39,87 @@
     
     <link rel="stylesheet" href="/_js/jquery.treeview/jquery.treeview.css" />
     <script type="text/javascript" src="/_js/jquery.treeview/jquery.treeview.js"></script>
-
+    
     <script type="text/javascript" src="/_js/common.js"></script>
+    <script type="text/javascript" src="/_js/crypts/base64.js"></script>
+    <script type="text/javascript">
+        function copytoclipboard()
+        {
+            try {
+                $("#result").select().each(function () { document.execCommand('copy'); });
+            } catch (e) {
+                print_error(e.message);
+            }
+        }
+        function calc_length()
+        {
+            $("#label-text").html("<b>Текст (" + $("#text").val().length + "):</b>");
+            $("#label-result").html("<b>Результат (" + $("#result").val().length + "):</b>");
+        }
+        function print_error(text)
+        {
+            $("div#error").html("&nbsp;" + text);
+            $("div#error").css("display","block");
+        }
+        function change()
+        {
+            try {
+                $("div#error").css("display","none");
+                var src = $("#text").val();
+                var dst = $("#result").val();
+                $("#text").val(dst);
+                $("#result").val("");
+                calc_length();
+            }
+            catch (e) {
+                print_error(e.message);
+            }
+            $("#text").focus();
+        }
+        function allclear()
+        {
+            try {
+                $("div#error").css("display","none");
+                $("#text").val("");
+                $("#result").val("");
+                calc_length();
+            }
+            catch (e) {
+                print_error(e.message);
+            }
+            $("#text").focus();
+        }
+        function encrypt()
+        {
+            try {
+                $("div#error").css("display","none");
+                var src = $("#text").val();
+                var dst = $("#result").val();
+                var result = Base64.encode(src);
+                $("#result").val(result);
+                calc_length();
+            }
+            catch (e) {
+                print_error(e.message);
+            }
+            $("#text").focus();
+        }
+        function decrypt()
+        {
+            try {
+                $("div#error").css("display","none");
+                var src = $("#text").val();
+                var dst = $("#result").val();
+                var result = Base64.decode(src);
+                $("#result").val(result);
+                calc_length();
+            }
+            catch (e) {
+                print_error(e.message);
+            }
+            $("#text").focus();
+        }
+    </script>
 </head>
 
 <body class="html front not-logged-in two-sidebars page-node" >
@@ -85,100 +164,10 @@
         <!-- start nav panel -->
         <div class="breadcrumb">
             <h2 class="element-invisible">You are here</h2>
-            <nav class="breadcrumb"></nav>
+            <nav class="breadcrumb"><a href="/">Главная</a> » <a href="/crypts/">Преобразования</a> » Base64</nav>
         </div>
         <!-- end nav panel -->
         
-        <!-- start main content -->
-        <section id="main" role="main" class="clearfix">
-            <a id="main-content"></a>
-            <h1 id="page-title" class="title">Шифрование online</h1>
-            <div class="region region-content">
-                <div class="block block-system" id="block-system-main">      
-                    <div class="content">
-                        Здесь собраны наиболее часто используемые методы шифрования и преобразования, которых постоянно не оказывается под рукой, когда 
-                        в них возникает срочная надобность. Например, вычислить <a href="/crypts/md5/">md5 хеш</a> или <a href="/crypts/url/">раскодировать url</a>. 
-                        А найти в интернете хорошую реализацию часто очень непросто.
-                        <br /><br />                        
-                        Прошу обратить внимание, что сайт использует кодировку <strong>UTF-8</strong>. Поэтому результаты шифрования одним и тем же 
-                        алгоритмом одних данных в разных кодировках могут не совпадать. Это относится к символам, не принадлежащим английскому алфавиту.
-                        <br /><br />
-                        <div style="float:left">
-                            <h3>Без ключа</h3>
-                            <a href="/crypts/base64/"><img src="/_images/crypts/base64.png" alt="base64" class="opacity-img" /></a>
-                            <a href="/crypts/md5/"><img src="/_images/crypts/md5.png" alt="MD5" /></a>
-                            <a href="/crypts/sha1/"><img src="/_images/crypts/sha1.png" alt="sha1" /></a>
-                            <a href="/crypts/sha256/"><img src="/_images/crypts/sha256.png" alt="sha256" /></a>
-                            <a href="/crypts/sha512/"><img src="/_images/crypts/sha512.png" alt="sha512" /></a>
-                        </div>
-                        <div style="float:left">
-                            <h3>Утилиты</h3>
-                            <a href="/crypts/qrcode/"><img src="/_images/crypts/qrcode.png" alt="qrcode" /></a>
-                            <a href="/crypts/text2hex/"><img src="/_images/crypts/text2hex.png" alt="text2hex" /></a>
-                            <a href="/crypts/time2date/"><img src="/_images/crypts/time2date.png" alt="time2date" /></a>
-                            <a href="/crypts/url/"><img src="/_images/crypts/url.png" alt="url" /></a>
-                        </div>
-                        <div style="float:right">
-                            <h3>Симметричные</h3>
-                            <a href="/crypts/aes/"><img src="/_images/crypts/aes.png" alt="md5" /></a>
-                            <a href="/crypts/rc4/"><img src="/_images/crypts/rc4.png" alt="rc4" /></a>
-                        </div>
-                        <div style="float:right">
-                            <h3>Асимметричные</h3>
-                            <a href="/crypts/rsa/"><img src="/_images/crypts/rsa.png" alt="rsa" /></a>
-                        </div>
-                        <div style="float:right">
-                            <h3>Математические</h3>
-                            <a href="/crypts/math/"><img src="/_images/crypts/math.png" alt="math" /></a>
-                            <a href="/crypts/notations/"><img src="/_images/crypts/notations.png" alt="notations" /></a>
-                        </div>
-                    </div>  
-                </div> <!-- /.block -->
-            </div>
-        </section>
-        <!-- end main content -->
-
-        <!-- start left sidebar -->
-        <aside id="sidebar-first" role="complementary" class="sidebar clearfix">
-            <div class="region region-sidebar-first">
-                <div id="block-system-main-menu" class="block block-system block-menu">
-                    <div class="content">
-                        <div id="sidetree">
-                            <div class="treeheader"><h2>Преобразования</h2></div>
-                            <ul id="tree">
-                                <li><span>Без ключа</span>
-                                    <ul>
-                                        <li><a href="/crypts/base64/">Base64</a></li>
-                                        <li><a href="/crypts/md5/">MD5</a></li>
-                                        <li><a href="/crypts/text2hex/">Text To Hex / Hex To Text</a></li>
-                                        <li><a href="/crypts/url/">URL кодирование</a></li>
-                                    </ul>
-                                </li>
-                                <li><span>Симметричные</span>
-                                    <ul>
-                                        <li><a href="/crypts/aes/">AES (Rijndael)</a></li>
-                                        <li><a href="/crypts/rc4/">RC4</a></li>
-                                    </ul>
-                                </li>
-                                <li><span>Асимметричные</span>
-                                    <ul>
-                                        <li><a href="/crypts/rsa/">RSA</a></li>
-                                    </ul>
-                                </li>
-                                <li><span>Математические</span>
-                                <ul>
-                                    <li><a href="/crypts/math/">Математические функции</a></li>
-                                    <li><a href="/crypts/notations/">Системы счисления BIN/OCT/DEC/HEX</a></li>
-                                </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </aside>
-        <!-- end left sidebar -->
-
         <!-- start right sidebar -->
         <aside id="sidebar-second" role="complementary" class="sidebar clearfix">
             <div class="region region-sidebar-second">
@@ -203,6 +192,100 @@
             </div>
         </aside>
         <!-- end right sidebar -->
+        
+        <!-- start main content -->
+        <section id="main" role="main" class="clearfix">
+            <a id="main-content"></a>
+            <h1 id="page-title" class="title">Base64</h1>
+            <div class="region region-content">
+                <div class="block block-system" id="block-system-main">      
+                    <div class="content">
+                        <div id="error" class="messages error"></div>
+                        <form id="crypt-form" class="contact-form">
+                            <div>
+                                <div class="form-item form-type-textarea form-item-message">
+                                    <div id="label-text"><strong>Текст:</strong></div>
+                                    <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea">
+                                        <textarea class="form-textarea" rows="7" cols="60" name="text" id="text"></textarea>
+                                    </div>
+                                </div>
+                                <div id="edit-actions1" class="form-actions form-wrapper">
+                                    <input type="button" class="form-submit" value="Кодировать" onclick="encrypt()" />
+                                    <input type="button" class="form-submit" value="Декодировать" onclick="decrypt()" />
+                                </div>
+                                <div class="form-item form-type-textarea form-item-message">
+                                    <div id="label-result"><strong>Результат:</strong></div>
+                                    <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea">
+                                        <textarea class="form-textarea" rows="7" cols="60" name="result" id="result"></textarea>
+                                    </div>
+                                </div>
+                                <div id="edit-actions2" class="form-actions form-wrapper">
+                                    <input type="button" class="form-submit" value="Копировать" onclick="copytoclipboard()" />
+                                    <input type="button" class="form-submit" value="Очистить" onclick="allclear()" />
+                                </div>
+                            </div>
+                        </form>  
+                        
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <ins class="adsbygoogle"
+                             style="display:block; text-align:center;"
+                             data-ad-layout="in-article"
+                             data-ad-format="fluid"
+                             data-ad-client="ca-pub-7884950563271752"
+                             data-ad-slot="3160738471"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                        <br />
+                        <strong>Описание:</strong>
+                        <div id="description">
+                            Base64 - это группа аналогичных схем кодирования двоичного текста, которые представляют двоичные данные в формате строки ASCII путем перевода их в представление radix-64.
+                            Термин Base64 происходит от определенной кодировки передачи содержимого MIME.
+                            <br /><br />
+                            Каждая цифра base64 представляет ровно 6 бит данных. Таким образом, три 8-битных байта (т. е. всего 24 бита) могут быть представлены четырьмя 6-битными цифрами base64.
+                            <br /><br />
+                            Определенный набор из 64 символов, выбранных для представления 64 мест-значений для базы, варьируется между реализациями. Общая стратегия состоит в том, чтобы выбрать
+                            64 символа, которые являются членами подмножества, общего для большинства кодировок, а также для печати. Эта комбинация оставляет данные, которые вряд ли будут изменены
+                            при передаче через информационные системы, такие как электронная почта, которые традиционно не были 8-битными чистыми. Например, реализация Base64 MIME использует A-Z, A-z и 0-9
+                            для первых 62 значений. Другие варианты разделяют это свойство, но отличаются символами, выбранными для последних двух значений; примером является UTF-7.
+                            <br /><br />
+                            Самые ранние экземпляры этого типа кодирования были созданы для коммутируемой связи между системами, работающими под управлением той же ОС — например, uuencode для UNIX,
+                            BinHex для TRS-80 (позже адаптированный для Macintosh) — и поэтому могли бы сделать больше предположений о том, какие символы были безопасны для использования.
+                            Например, uuencode использует прописные буквы, цифры и много знаков препинания, но не строчные.
+                        </div><br />                        
+                        <strong>Ресурсы:</strong>
+                        <div id="content-resources">
+                            <a href="http://ru.wikipedia.org/wiki/Base64"><img src="/_images/wikipedia.png"  title="Base64 Wikipedia" /></a>
+                            <a href="http://tools.ietf.org/html/rfc1421"><img src="/_images/rfc.png" title="RFC 1421 (Privacy Enhancement for Electronic Internet Mail)" /></a>
+                            <a href="http://tools.ietf.org/html/rfc2045"><img src="/_images/rfc.png" title="RFC 2045 (MIME)" /></a>
+                            <a href="http://tools.ietf.org/html/rfc4648"><img src="/_images/rfc.png" title="RFC 4648 (The Base16, Base32, и Base64 кодирование данных)" /></a>
+                        </div>
+                        <br />                        
+                    </div>  
+                </div> <!-- /.block -->
+            </div>
+        </section>
+        <!-- end main content -->
+
+        <!-- start left sidebar -->
+        <aside id="sidebar-first" role="complementary" class="sidebar clearfix">
+            <div class="region region-sidebar-first">
+                <div id="block-system-main-menu" class="block block-system block-menu">
+                    <div class="content">
+                        <div id="sidetree">
+                            <div class="treeheader"><h2>Преобразования</h2></div>
+                            <ul id="tree">
+                                <li><span>Без ключа</span></li>
+                                <li><span>Симметричные</span></li>
+                                <li><span>Асимметричные</span></li>
+                                <li><span>Математические</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- end left sidebar -->
     </div>
     <!-- end content body -->
 
@@ -222,7 +305,7 @@
                         <a href="/contacts/" title="">Контакты</a>
                     </span>
                     <span style="float: right">
-                        <a href="/en/" title="">English</a> |
+                        <a href="/en/crypts/base64/" title="">English</a> |
                         <a title="">Русский</a>
                     </span>
                 </div>  
@@ -236,7 +319,7 @@
 </div>
 
 <!--LiveInternet counter--><script type="text/javascript">document.write("<a href='//www.liveinternet.ru/click' target=_blank><img src='//counter.yadro.ru/hit?t11.6;r"+escape(document.referrer)+((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+";h"+escape(document.title.substring(0,150))+";"+Math.random()+"' alt='' title='LiveInternet: показано число просмотров за 24 часа, посетителей за 24 часа и за сегодня' border='0' width='88' height='31' style='display:none;'><\/a>")</script><!--/LiveInternet-->    
-<!-- Yandex.Metrika informer --> <a href="https://metrika.yandex.ru/stat/?id=47913653&amp;from=informer" target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/47913653/3_1_FFFFFFFF_EFEFEFFF_0_pageviews" style="width:88px; height:31px; border:0; display: none;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="47913653" data-lang="ru" /></a> <!-- /Yandex.Metrika informer --> <!-- Yandex.Metrika counter --> <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter47913653 = new Ya.Metrika({ id:47913653, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/47913653" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+<!-- Yandex.Metrika informer --> <a href="https://metrika.yandex.ru/stat/?id=47913653&amp;from=informer" target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/47913653/3_1_FFFFFFFF_EFEFEFFF_0_pageviews" style="width:88px; height:31px; border:0; display: none;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="47913653" data-lang="ru" /></a> <!-- /Yandex.Metrika informer --> <!-- Yandex.Metrika counter --> <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter47913653 = new Ya.Metrika({ id:47913653, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/47913653" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->    
 
 </body>
 </html>
