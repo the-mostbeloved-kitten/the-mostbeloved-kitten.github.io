@@ -113,5 +113,187 @@
   <li><a href="quest.html">квест</a></li> 
 </nav>
   </script>
+  <body class="html front not-logged-in two-sidebars page-node" >
+<div id="wrapper" class="clearfix">
+    <!-- start top header -->
+    <div id="header-top" class="clearfix">
+        <!-- start logo -->
+        <div id="logo">
+            <a href="/" title="Главная"><img src="/_images/logo.png" alt="Главная" /></a>
+            <!--site slogan-->
+            <div id="site-slogan"></div>
+        </div>
+        <!-- end logo -->            
+        
+        <!-- start search -->
+        <!--form id="search-box" method="post" action="" class="search-box" onsubmit=""-->
+        <div id="search-box" class="search-box">
+            <input type="text" class="form-text" name="search-text" id="search-text" />
+            <input type="button" class="form-submit" value="Поиск" name="search-submit" id="search-submit" onclick="make_search($('#search-text').val())" />
+        </div>
+        <!--/form-->
+        <!-- end search -->
+    </div>
+    <!-- end top header -->
+    
+    <!--start top menu --> 
+    <div id="header" class="clearfix">
+        <div id="main-menu">
+            <div id="main-menu-links">
+                <ul class="menu">
+                    <li><a href="/" title="">Главная</a></li>
+                    <li><a href="/crypts/" title="">Преобразования</a></li>
+                    <li><a href="/contacts/" title="">Контакты</a></li>
+                </ul>
+            </div><!-- end main-menu-links -->
+        </div><!-- end main-menu -->
+    </div>
+    <!-- end top menu -->
+    
+    <!-- start content body -->
+    <div id="content-body">
+        <!-- start nav panel -->
+        <div class="breadcrumb">
+            <h2 class="element-invisible">You are here</h2>
+            <nav class="breadcrumb"><a href="/">Главная</a> » <a href="/crypts/">Преобразования</a> » Base64</nav>
+        </div>
+        <!-- end nav panel -->
+        
+        <!-- start right sidebar -->
+        <aside id="sidebar-second" role="complementary" class="sidebar clearfix">
+            <div class="region region-sidebar-second">
+                <div id="block-right-ads" class="block" style="padding:0">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:220px;height:220px"
+                         data-ad-client="ca-pub-7884950563271752"
+                         data-ad-slot="4459734083"></ins>
+                    <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+                <div id="block-news" class="block block-news">
+                    <h2>Новости</h2>    
+                    <div class="content"></div>  
+                </div>
+                <div id="block-web-news" class="block block-news">
+                    <h2>Мировые новости</h2>    
+                    <div class="content"></div>  
+                </div>
+            </div>
+        </aside>
+        <!-- end right sidebar -->
+        
+        <!-- start main content -->
+        <section id="main" role="main" class="clearfix">
+            <a id="main-content"></a>
+            <h1 id="page-title" class="title">Base64</h1>
+            <div class="region region-content">
+                <div class="block block-system" id="block-system-main">      
+                    <div class="content">
+                        <div id="error" class="messages error"></div>
+                        <form id="crypt-form" class="contact-form">
+                            <div>
+                                <div class="form-item form-type-textarea form-item-message">
+                                    <div id="label-text"><strong>Текст:</strong></div>
+                                    <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea">
+                                        <textarea class="form-textarea" rows="7" cols="60" name="text" id="text"></textarea>
+                                    </div>
+                                </div>
+                                <div id="edit-actions1" class="form-actions form-wrapper">
+                                    <input type="button" class="form-submit" value="Кодировать" onclick="encrypt()" />
+                                    <input type="button" class="form-submit" value="Декодировать" onclick="decrypt()" />
+                                </div>
+                                <div class="form-item form-type-textarea form-item-message">
+                                    <div id="label-result"><strong>Результат:</strong></div>
+                                    <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea">
+                                        <textarea class="form-textarea" rows="7" cols="60" name="result" id="result"></textarea>
+                                    </div>
+                                </div>
+                                <div id="edit-actions2" class="form-actions form-wrapper">
+                                    <input type="button" class="form-submit" value="Копировать" onclick="copytoclipboard()" />
+                                    <input type="button" class="form-submit" value="Очистить" onclick="allclear()" />
+                                </div>
+                            </div>
+                        </form>  
+                        
+                        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                        <ins class="adsbygoogle"
+                             style="display:block; text-align:center;"
+                             data-ad-layout="in-article"
+                             data-ad-format="fluid"
+                             data-ad-client="ca-pub-7884950563271752"
+                             data-ad-slot="3160738471"></ins>
+                        <script>
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                        <br />
+                        <div id="content-resources">
+                            <a href="http://ru.wikipedia.org/wiki/Base64"><img src="/_images/wikipedia.png"  title="Base64 Wikipedia" /></a>
+                            <a href="http://tools.ietf.org/html/rfc1421"><img src="/_images/rfc.png" title="RFC 1421 (Privacy Enhancement for Electronic Internet Mail)" /></a>
+                            <a href="http://tools.ietf.org/html/rfc2045"><img src="/_images/rfc.png" title="RFC 2045 (MIME)" /></a>
+                            <a href="http://tools.ietf.org/html/rfc4648"><img src="/_images/rfc.png" title="RFC 4648 (The Base16, Base32, и Base64 кодирование данных)" /></a>
+                        </div>
+                        <br />                        
+                    </div>  
+                </div> <!-- /.block -->
+            </div>
+        </section>
+        <!-- end main content -->
+
+        <!-- start left sidebar -->
+        <aside id="sidebar-first" role="complementary" class="sidebar clearfix">
+            <div class="region region-sidebar-first">
+                <div id="block-system-main-menu" class="block block-system block-menu">
+                    <div class="content">
+                        <div id="sidetree">
+                            <div class="treeheader"><h2>Преобразования</h2></div>
+                            <ul id="tree">
+                                <li><span>Без ключа</span></li>
+                                <li><span>Симметричные</span></li>
+                                <li><span>Асимметричные</span></li>
+                                <li><span>Математические</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- end left sidebar -->
+    </div>
+    <!-- end content body -->
+
+    <div class="clear"></div>
+    <div id="content-bottom"></div>
+    <div class="clear"></div>
+    
+    <!-- start bottom footer -->
+    <div id="footer" class="clearfix">
+        <div class="clear"></div>
+        <div class="region region-footer">
+            <div id="block-system-powered-by" class="block block-system">      
+                <div class="content">
+                    <span>
+                        <a href="/" title="">Главная</a> |
+                        <a href="/crypts/" title="">Преобразования</a> |
+                        <a href="/contacts/" title="">Контакты</a>
+                    </span>
+                    <span style="float: right">
+                        <a href="/en/crypts/base64/" title="">English</a> |
+                        <a title="">Русский</a>
+                    </span>
+                </div>  
+            </div> <!-- /.block -->
+        </div> <!-- /.region -->
+        
+        <div class="clear"></div>
+        <div id="copyright">Copyright &copy; 2011-2018, <a href="mailto:crypt-online@yandex.ru">crypt-online.ru</a>, <span>Design theme by <a href="http://drupal.org">Drupal</a></span></div>
+    </div>
+    <!-- end bottom footer -->
+</div>
+
+<!--LiveInternet counter--><script type="text/javascript">document.write("<a href='//www.liveinternet.ru/click' target=_blank><img src='//counter.yadro.ru/hit?t11.6;r"+escape(document.referrer)+((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+";h"+escape(document.title.substring(0,150))+";"+Math.random()+"' alt='' title='LiveInternet: показано число просмотров за 24 часа, посетителей за 24 часа и за сегодня' border='0' width='88' height='31' style='display:none;'><\/a>")</script><!--/LiveInternet-->    
+<!-- Yandex.Metrika informer --> <a href="https://metrika.yandex.ru/stat/?id=47913653&amp;from=informer" target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/47913653/3_1_FFFFFFFF_EFEFEFFF_0_pageviews" style="width:88px; height:31px; border:0; display: none;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="47913653" data-lang="ru" /></a> <!-- /Yandex.Metrika informer --> <!-- Yandex.Metrika counter --> <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter47913653 = new Ya.Metrika({ id:47913653, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/47913653" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->    
+
 </body>
 </html>
